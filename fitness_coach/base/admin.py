@@ -3,6 +3,7 @@ from .models import *
 # Register your models here.
 
 admin.site.register(User)
+admin.site.register(chatbot)
 admin.site.register(food)
 admin.site.register(contact)
 admin.site.register(workout)

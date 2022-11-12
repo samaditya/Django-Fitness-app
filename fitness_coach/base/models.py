@@ -4,6 +4,9 @@ from django.db.models.fields import CharField
 from .manager import UserManager
 
 # Create your models here.
+class chatbot(models.Model):
+    user_inputt = models.CharField(null = True , max_length = 300)
+    bot_res = models.CharField(null = True , max_length = 3000)
 
 class User(AbstractUser):
     username=None

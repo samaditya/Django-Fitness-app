@@ -17,7 +17,29 @@ from Machine_L import ml
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+
+
+import nltk
+from newspaper import Article
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import random
+import string
+import warnings
+
+
 # Create your views here.
+def a(request):
+    if request.method == 'POST':
+        user_i = request.POST.get('user_iinput')
+        data = ml.chat(user_i)
+        context = {'data':data ,'user_i' : user_i}
+    return render(request , 'chatbot.html',context) 
+    
+def chatbottt(request):
+
+    context = {}
+    return render(request , 'chatbot.html', context) 
 
 
 def home(request):
